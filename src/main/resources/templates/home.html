@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LocalBus</title>
+    <link rel="stylesheet" href="" th:href="@{/style.css}"/>
+    <link rel="icon"
+          href="https://cdn-icons.flaticon.com/png/512/416/premium/416597.png?token=exp=1643862576~hmac=57771818f8c545ab8f16cbd9cc5487d8"
+          type="image/icon type">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript">
+        $(function () {
+            $("#loca1").autocomplete({
+                source: "location",
+                minLength: 2,
+                select: function (event, ui) {
+                    this.value = ui.item.label;
+                    $("#Plant_Id").val(ui.item.value);
+                    return false;
+                }
+            });
+        });
+
+        $(function () {
+            $("#loca2").autocomplete({
+                source: "location",
+                minLength: 2,
+                select: function (event, ui) {
+                    this.value = ui.item.label;
+                    $("#Plant_Id").val(ui.item.value);
+                    return false;
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="brand-title">LocalBus</div>
+    <div class="inputs">
+        <!--        <h1>Tell me your location and destination: </h1>-->
+        <form th:action="@{/home}" th:object="${buses}" method="post">
+            <p>Your Location <label>
+                <input id="loca1" type="text" th:field="*{origin}">
+            </label></p>
+            <p>Destination <label>
+                <input id="loca2" type="text" th:field="*{dest}">
+            </label></p>
+            <p>
+                <button type="submit" value="Submit">BUS</button>
+            </p>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
