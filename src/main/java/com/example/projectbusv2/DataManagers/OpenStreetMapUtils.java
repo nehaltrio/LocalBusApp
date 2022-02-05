@@ -93,10 +93,12 @@ public class OpenStreetMapUtils {
         log.debug("obj=" + obj);
 
         if (obj instanceof JSONArray array) {
+            JSONArray jsonArray = (JSONArray) obj;
             if (array.size() > 0) {
                 JSONObject jsonObject = (JSONObject) array.get(0);
 
                 String lon = (String) jsonObject.get("lon");
+
                 String lat = (String) jsonObject.get("lat");
                 log.debug("lon=" + lon);
                 log.debug("lat=" + lat);
