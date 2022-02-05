@@ -11,13 +11,12 @@
 <div class="container2">
     <div class="brand-title">LocalBus</div>
     <br>
-    Distance (Km):
-    <p th:text="${buses.getDistance(buses.getOrigin(),buses.getDest())}"></p>
-    Fare (Tk):
-    <p th:text="${buses.getFare(buses.getDistance(buses.getOrigin(),buses.getDest()))}"></p>
+    <p th:text="${'Distance (Km): '+buses.getDistance(buses.getOrigin(),buses.getDest())}"></p>
+
+    <p th:text="${'Fare (Tk): '+buses.getFare(buses.getDistance(buses.getOrigin(),buses.getDest()))}"></p>
 
     Buses:
-    <p th:text="${buses.getOrigin()}"></p>
+    <br th:text="${buses.getOrigin() + '  To  ' + buses.getDest()}">
     <div class="listStyle">
         <ul style="list-style-type: none;">
             <li th:each="item : *{buses.getBus()}" th:text="${item}"></li>
