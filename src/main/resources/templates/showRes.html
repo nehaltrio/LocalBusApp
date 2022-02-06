@@ -12,7 +12,7 @@
     <div class="brand-title">LocalBus</div>
     <br>
     Buses:
-    <br th:text="${buses.getOrigin() + '  To  ' + buses.getDest()}">
+    <p th:text="${buses.getOrigin() + ' --> ' + buses.getDest()}">
     <div class="listStyle">
         <ul style="list-style-type: none;">
             <li th:each="item : *{buses.getBus()}" th:text="${item}"></li>
