@@ -11,10 +11,6 @@
 <div class="container2">
     <div class="brand-title">LocalBus</div>
     <br>
-    <p th:text="${'Distance (Km): '+buses.getDistance(buses.getOrigin(),buses.getDest())}"></p>
-
-    <p th:text="${'Fare (Tk): '+buses.getFare(buses.getDistance(buses.getOrigin(),buses.getDest()))}"></p>
-
     Buses:
     <br th:text="${buses.getOrigin() + '  To  ' + buses.getDest()}">
     <div class="listStyle">
