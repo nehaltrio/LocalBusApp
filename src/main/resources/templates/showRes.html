@@ -2,14 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>LocalBus</title>
+    <title>BusGuru</title>
     <link rel="stylesheet" href="" th:href="@{/style.css}"/>
     <link rel="icon" href="https://cdn-icons.flaticon.com/png/512/416/premium/416597.png?token=exp=1643862576~hmac=57771818f8c545ab8f16cbd9cc5487d8" type="image/icon type">
 </head>
 <body>
 
 <div class="container2">
-    <div class="brand-title">LocalBus</div>
+    <div class="brand-title">BusGuru</div>
     <br>
     Buses:
     <p th:text="${buses.getOrigin() + ' --> ' + buses.getDest()}">
